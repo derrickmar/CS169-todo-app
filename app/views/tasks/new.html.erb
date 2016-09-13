@@ -1,0 +1,16 @@
+<h1>Add a task</h1>
+<%= form_for @task do |f| %>
+    <%= f.label :description %>:
+    <%= f.text_field :description %><br />
+    
+    <%= f.submit %>
+<% end %>
+
+<h1> All tasks </h1>
+<ul>
+<% @tasks.each do |task| %>
+    <li>
+        <%= link_to("#{task.id}. #{task.description}", task) %>
+    </li>
+<% end %>
+</ul>
